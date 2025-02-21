@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactListApplication.ContactsPage"
+             Title="ContactsPage"
+             NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="Auto, *">
+        <Frame Grid.Row="0" BackgroundColor="Beige" HasShadow="True">
+            <Label Text="Contacts" FontSize="Large" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+        </Frame>
+        <CollectionView Grid.Row="1" x:Name="ContactsCV" SelectionMode="Single" SelectionChanged="ContactsCV_SelectionChanged" IsGrouped="True">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="1"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding GroupName}" FontSize="20" 
+                       FontAttributes="Bold" 
+                       BackgroundColor="LightGray"/>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+
+
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+                    <VerticalStackLayout Margin="20" Padding="20">
+                        <Label  Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Image HeightRequest="50" WidthRequest="60" Source="{Binding ImageName}" HorizontalOptions="Center" />
+                       
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

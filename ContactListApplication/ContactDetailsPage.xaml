@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactListApplication.ContactDetailsPage"
+             Title="ContactDetailsPage"
+             >
+    <Grid RowDefinitions="Auto,Auto, Auto, Auto, *, *, *" Padding="20" >
+        
+        <Image Grid.Row="0" x:Name="imageContact" HeightRequest="200" />
+        <Label  Grid.Row="1" x:Name="lblName" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        <Label Grid.Row="2" x:Name="lblEmail" FontSize="Medium" FontAttributes="Bold"/>
+        <Label Grid.Row="3" x:Name="lblPhone" FontSize="Medium" FontAttributes="Bold"/>
+        <Label Grid.Row="4" x:Name="lblDescription" FontSize="Subtitle" FontAttributes="Bold"/>
+        <Button Grid.Row ="5" Text="Back" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Button_Clicked" />
+
+
+
+    </Grid>
+          
+</ContentPage>
